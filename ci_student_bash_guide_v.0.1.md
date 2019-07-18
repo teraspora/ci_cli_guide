@@ -1,3 +1,9 @@
+<style>
+    body {
+        background-color: #ffddaa;
+    }
+</style>
+
 # Guide to the Bash CLI (Command-Line Interface) for student software developers
 
 ## Introduction
@@ -6,7 +12,7 @@ Throughout your journey as a software developer, you will have to use the comman
 
 So exactly what are the command line, the CLI, Bash, the Terminal, the Linux shell?
 
-Simply put, it's a way of telling the computer what to do by typing textual commands.   It's an application that runs on your computer, or in the cloud on a server, and gives you a window in which there's a prompt, for instance a `$` sign.   You type commands after the prompt, press `Enter` and the computer then runs the command and prints any output there may be.   A command you issue may for instance be an instruction to move or copy files, to create a directory (folder), to run a program, to edit a file, to change or query operating system information, to install applications or libraries, to check network status, to ask the time...
+Simply put, it's a way of telling the computer what to do by typing textual commands.   It's an application that runs on your computer, or in the cloud on a server, and gives you a window in which there's a prompt, for instance a `$` sign.   You type commands after the prompt, press `Enter` and the computer then runs the command and prints any output there may be.   A command you issue may for instance be an instruction to move or copy files, to create a directory (folder), to run a program, to edit afile, to change or query operating system information, to install applications or libraries, to check network status, to ask the time...
 
 Commands begin with a keyword, and then a space.   Then you type any options and/or flags, separated by spaces.   Options are ususally just words or hyphenated words (like `install` or `full-upgrade`).   Flags can be single letters preceded by a dash/minus sign (like `-h`, or word-strings preceded by a double dash, (like `--almost-all`).
 
@@ -86,11 +92,24 @@ $ pwd
 $ ls ../project_1/
 $ 
 ```
+
+Alternatively we could've gone there:
+
+```zsh
+$ pwd
+/home/john/project_2
+$ cd ../project_1/
+$ ls
+$
+```
+
 No output means there are no files or folders within `project_1`.
 
 OK, at this stage we don't really need two project directories, so let's remove `project_2`.   We'll need to go up out of it, back to the parent, first:
 
 ```zsh
+$ pwd
+/home/john/project_2
 $ cd ..
 $ pwd
 /home/john
