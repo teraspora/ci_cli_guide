@@ -1,4 +1,4 @@
-# Guide to the Bash CLI (Command-Line Interface)
+# Guide to the Bash CLI (Command-Line Interface) for student software developers
 
 ## Introduction
 
@@ -31,7 +31,7 @@ $
 ```
 `pwd` stands for "Print working directory".   Whenever you're in the shell, you're someplace in the file system.   You can use `pwd` to find out where.   OK, let's create a folder for our project:
 
-```
+```bash
 $ pwd
 /home/john
 $ mkdir project_1
