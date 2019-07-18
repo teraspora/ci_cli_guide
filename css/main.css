@@ -1,0 +1,40 @@
+body {
+    background-color: #006cf5;
+}
+
+.container {
+    background-color: #010033;
+    color: #ffeeaa;
+    font-family: serif;
+    font-size: 1.3vw;
+    width: 64vw;
+    margin: auto;
+    padding: 1.6vw;
+    border: 2px solid #f5003a;
+    border-radius: 5px;
+}
+
+h2 {
+    color: #0374c3;
+}
+
+h1 {
+    color: #ec9dbf;
+}
+
+p > code, .prompt {
+    color: #f56eb7;
+}
+
+pre {
+    background-color: #2e2424;
+}
+
+blockquote {
+    font-style: italic;
+    background-color: #000000;
+    color: #0374c3;
+    border-radius: 5px;
+    margin: 3vw;
+    padding: 2vw;
+}
