@@ -24,7 +24,7 @@ We'll use the terms "folder" and "directory" interchangeably.   The `path` of a 
 
 Let's find out where we are!
 
-```
+```bash
 $ pwd
 /home/john
 $ 
@@ -52,7 +52,7 @@ When you type `pwd` again, notice that the working, or current, directory has ch
 
 Let's go back up to the parent:
 
-```
+```bash
 $ cd ..
 $ pwd
 /home/john
@@ -62,7 +62,7 @@ $
 
 Now create another folder, a "sibling" of `project_1`, change to it, and create a file within it:
 
-```
+```bash
 $ mkdir project_2
 $ cd project_2/
 $ >fred.txt
@@ -72,7 +72,7 @@ Typing `>` and then a file name will create an empty file with that name.   Bewa
 
 Let's check it got created:
 
-```
+```bash
 $ ls
 fred.txt
 $ 
@@ -80,7 +80,7 @@ $
 
 We use `ls` to list directory contents.   But how can we list the contents of `project_1`, if we're in `project_2`?   Simple:  go to the parent first, then down into `project_1`:
 
-```
+```bash
 $ pwd
 /home/john/project_2
 $ ls ../project_1/
@@ -90,7 +90,7 @@ No output means there are no files or folders within `project_1`.
 
 OK, at this stage we don't really need two project directories, so let's remove `project_2`.   We'll need to go up out of it, back to the parent, first:
 
-```
+```bash
 $ cd ..
 $ pwd
 /home/john
@@ -116,7 +116,7 @@ DESCRIPTION
 
 Ok, so we need to remove `fred.txt` first.   But it's a file, not a folder, so we can't use `rmdir`.
 
-```
+```bash
 $ ls
 fred.txt
 $ $ rm project_2/fred.txt 
@@ -133,7 +133,7 @@ Unsurprisingly, `rm` is used for removing files.   They don't have to be empty s
 
 Instead you might want to move a file somewhere else.   Let's create a few files and folders inside `project_1`:
 
-```
+```bash
 $ pwd
 /home/john/project_1
 $ mkdir foo
@@ -153,18 +153,19 @@ $
 
 Let's write some text to `tiger.txt`.   First, we'll move into `foo/cats` so we don't have to use long paths:
 
-```
+```bash
 $ cd foo/cats
 $ echo "Tiger, tiger burning bright" > tiger.txt 
 $ cat tiger.txt
 Tiger, tiger burning bright
 $ 
+```
 
 Two new commands:
 `cat` outputs the contents of a text file to the terminal.
 `echo` copies the quoted text on the left of the `>` to the file on the right.   If the file doesn't exist, it'll be created.   If it does exist, it'll be overwritten.   To append text at the end of the file, after the existing content, use `>>` instead of `>`:
 
-```
+```bash
 $ echo "Some text" > tiger.txt 
 $ cat tiger.txt
 Some text
