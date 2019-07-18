@@ -28,6 +28,7 @@ p > code, .prompt {
 
 pre {
     background-color: #2e2424;
+    border-radius: 5px;
 }
 
 blockquote {
