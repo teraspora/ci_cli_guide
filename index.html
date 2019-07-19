@@ -118,13 +118,13 @@
         DESCRIPTION
                Remove the DIRECTORY(ies), <span class="hljs-keyword">if</span> they are empty.
         </code></pre>
-        
+
 <p>Ok, so to empty it, we need to remove <code>fred.txt</code> first.   But that&#39;s a file, not a folder, so we can&#39;t use <code>rmdir</code>.</p>
         
         <pre><code class="lang-zsh">
             <span class="prompt">$</span> ls
             fred.txt
-            <span class="prompt">$</span> <span class="prompt">$</span> rm project_2/fred.txt 
+            <span class="prompt">$</span> rm project_2/fred.txt 
             <span class="prompt">$</span> ls project_2/
             <span class="prompt">$</span> rmdir project_2/
             <span class="prompt">$</span>
