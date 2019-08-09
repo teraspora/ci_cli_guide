@@ -11,7 +11,8 @@
         <h2 id="introduction">Introduction</h2>
         <p>Throughout your journey as a software developer, you will have to use the command line.   Sure, these days many code editors, cloud-based or not, have buttons you can click and icons you can drag to do many of the things that you&#39;ll need to do to create a simple web application and deploy it.   But once things start getting a little more complex, it becomes essential to be comfortable using the command line.</p>
         <p>So exactly what are the command line, the CLI, Bash, the Terminal, the Linux shell?</p>
-        <p>Simply put, it&#39;s a way of telling the computer what to do by typing textual commands.   It&#39;s an application that runs on your computer, or in the cloud on a server, and gives you a window in which there&#39;s a prompt, for instance a <code>$</code> sign.   You type commands after the prompt, press <code>Enter</code> and the computer then runs the command and prints any output there may be.   A command you issue may for instance be an instruction to move or copy files, to create a directory (folder), to run a program, to edit afile, to change or query operating system information, to install applications or libraries, to check network status, to ask the time...</p>
+        <p>Simply put, it&#39;s a way of telling the computer what to do by typing textual commands.   It&#39;s an application that runs on your computer, or in the cloud on a server, and gives you a window in which there&#39;s a prompt, for instance a <code>$</code> sign.   You type commands after the prompt, press <code>Enter</code> and the computer then runs the command and prints any output there may be.</p>
+        <p>A command you issue may, for instance, be an instruction to move or copy files, to create a directory (folder), to run a program, to edit afile, to change or query operating system information, to install applications or libraries, to check network status, to ask the time...</p>
         <p>Commands begin with a keyword, and then a space.   Then you type any options and/or flags, separated by spaces.   Options are ususally just words or hyphenated words (like <code>install</code> or <code>full-upgrade</code>).   Flags can be single letters preceded by a dash/minus sign (like <code>-h</code>, or word-strings preceded by a double dash, (like <code>--almost-all</code>).</p>
         <p>There&#39;s a handful of commands it pays to get familiar with.   And most commands accept a <code>-h</code> or <code>--help</code> flag which will print basic information about itself.   Sometimes it&#39;s not very helpful, though, and you&#39;ll want to use the <code>info</code> command or the <code>man</code> command (it stands for &quot;manual&quot;) to get more detailed information.   There are also many forums and other websites with tutorials, examples, testbeds, video lessons.   So if you want to find out about the <code>find</code> command, for example, you could type <code>info find</code> (press space to page down, <code>q</code> to quit displaying the man page).   And/or search the web for &quot;bash find&quot; and explore the results.</p>
         <p>And there&#39;s a handful of very useful keyboard shortcuts it&#39;s worth getting to know.   We&#39;ll introduce these one by one as we go.</p>
@@ -22,21 +23,21 @@
         <p>Let&#39;s find out where we are!</p>
         
         <pre><code class="lang-zsh">
-            <span class="prompt">$</span> pwd
+            <span class="prompt">$ </span> pwd
             /home/john
-            <span class="prompt">$</span>
+            <span class="prompt">$ </span>
         </code></pre>
 
         <p><code>pwd</code> stands for &quot;Print working directory&quot;.   Whenever you&#39;re in the shell, you&#39;re someplace in the file system.   You can use <code>pwd</code> to find out where.   OK, let&#39;s create a folder for our project:</p>
         
         <pre><code class="lang-zsh">
-            <span class="prompt">$</span> pwd
+            <span class="prompt">$ </span> pwd
             /home/john
-            <span class="prompt">$</span> mkdir project_1
-            <span class="prompt">$</span> cd project_1/
-            <span class="prompt">$</span> pwd
+            <span class="prompt">$ </span> mkdir project_1
+            <span class="prompt">$ </span> cd project_1/
+            <span class="prompt">$ </span> pwd
             /home/john/project_1
-            <span class="prompt">$</span>
+            <span class="prompt">$ </span>
         </code></pre>
 
         <p>OK, that&#39;s two new commands!</p>
@@ -47,10 +48,10 @@
         <p>Let&#39;s go back up to the parent:</p>
         
         <pre><code class="lang-zsh">
-            <span class="prompt">$</span> cd ..
-            <span class="prompt">$</span> pwd
+            <span class="prompt">$ </span> cd ..
+            <span class="prompt">$ </span> pwd
             /home/john
-            <span class="prompt">$</span>
+            <span class="prompt">$ </span>
         </code></pre>
 
         <p>Two dots, <code>..</code> always denotes the parent of the current directory.   A single dot, <code>.</code> denotes the current directory.</p>
@@ -66,42 +67,42 @@
         <p>Let&#39;s check it got created:</p>
         
         <pre><code class="lang-zsh">
-            <span class="prompt">$</span> ls
+            <span class="prompt">$ </span> ls
             fred.txt
-            <span class="prompt">$</span>
+            <span class="prompt">$ </span>
         </code></pre>
 
         <p>We use <code>ls</code> to list directory contents.   But how can we list the contents of <code>project_1</code>, if we&#39;re in <code>project_2</code>?   Simple:  go to the parent first, then down into <code>project_1</code>:</p>
         
         <pre><code class="lang-zsh">
-            <span class="prompt">$</span> pwd
+            <span class="prompt">$ </span> pwd
             /home/john/project_2
-            <span class="prompt">$</span> ls ../project_1/
-            <span class="prompt">$</span>
+            <span class="prompt">$ </span> ls ../project_1/
+            <span class="prompt">$ </span>
         </code></pre>
 
         <p>Alternatively we could&#39;ve gone there:</p>
         
         <pre><code class="lang-zsh">
-            <span class="prompt">$</span> pwd
+            <span class="prompt">$ </span> pwd
             /home/john/project_2
-            <span class="prompt">$</span> cd ../project_1/
-            <span class="prompt">$</span> ls
-            <span class="prompt">$</span>
+            <span class="prompt">$ </span> cd ../project_1/
+            <span class="prompt">$ </span> ls
+            <span class="prompt">$ </span>
         </code></pre>
 
         <p>No output means there are no files or folders within <code>project_1</code>.</p>
         <p>OK, at this stage we don&#39;t really need two project directories, so let&#39;s remove <code>project_2</code>.   We&#39;ll need to go up out of it, back to the parent, first:</p>
         
         <pre><code class="lang-zsh">
-            <span class="prompt">$</span> pwd
+            <span class="prompt">$ </span> pwd
             /home/john/project_2
-            <span class="prompt">$</span> cd ..
-            <span class="prompt">$</span> pwd
+            <span class="prompt">$ </span> cd ..
+            <span class="prompt">$ </span> pwd
             /home/john
-            <span class="prompt">$</span> rmdir project_2/
+            <span class="prompt">$ </span> rmdir project_2/
             rmdir: failed to remove <span class="hljs-string">'project_2/'</span>: Directory <span class="hljs-keyword">not</span> empty
-            <span class="prompt">$</span>
+            <span class="prompt">$ </span>
         </code></pre>
 
         <p><code>rmdir</code> means &quot;Remove directory&quot;.   But it didn&#39;t work.   If you type <code>man rmdir</code>, you&#39;ll see why right at the top:</p>
@@ -122,12 +123,12 @@
 <p>Ok, so to empty it, we need to remove <code>fred.txt</code> first.   But that&#39;s a file, not a folder, so we can&#39;t use <code>rmdir</code>.</p>
         
         <pre><code class="lang-zsh">
-            <span class="prompt">$</span> ls
+            <span class="prompt">$ </span> ls
             fred.txt
-            <span class="prompt">$</span> rm project_2/fred.txt 
-            <span class="prompt">$</span> ls project_2/
-            <span class="prompt">$</span> rmdir project_2/
-            <span class="prompt">$</span>
+            <span class="prompt">$ </span> rm project_2/fred.txt 
+            <span class="prompt">$ </span> ls project_2/
+            <span class="prompt">$ </span> rmdir project_2/
+            <span class="prompt">$ </span>
         </code></pre>
 
         <p>Unsurprisingly, <code>rm</code> is used for removing files.   They don&#39;t have to be empty so take care what you remove!   </p>
@@ -139,31 +140,31 @@
         <p>Instead you might want to move a file somewhere else.   Let&#39;s create a few files and folders inside <code>project_1</code>:</p>
         
         <pre><code class="lang-zsh">
-            <span class="prompt">$</span> pwd
+            <span class="prompt">$ </span> pwd
             /home/john/project_1
-            <span class="prompt">$</span> mkdir foo
-            <span class="prompt">$</span> mkdir bar
-            <span class="prompt">$</span> mkdir foo/cats
-            <span class="prompt">$</span> mkdir foo/dogs
-            <span class="prompt">$</span> &gt;foo/cats/lion.txt
-            <span class="prompt">$</span> &gt;foo/cats/tiger.txt
-            <span class="prompt">$</span> ls
+            <span class="prompt">$ </span> mkdir foo
+            <span class="prompt">$ </span> mkdir bar
+            <span class="prompt">$ </span> mkdir foo/cats
+            <span class="prompt">$ </span> mkdir foo/dogs
+            <span class="prompt">$ </span> &gt; foo/cats/lion.txt
+            <span class="prompt">$ </span> &gt; foo/cats/tiger.txt
+            <span class="prompt">$ </span> ls
             bar  foo
-            <span class="prompt">$</span> ls foo
+            <span class="prompt">$ </span> ls foo
             cats  dogs
-            <span class="prompt">$</span> ls foo/cats/
+            <span class="prompt">$ </span> ls foo/cats/
             lion.txt  tiger.txt
-            <span class="prompt">$</span>
+            <span class="prompt">$ </span>
         </code></pre>
 
         <p>Let&#39;s write some text to <code>tiger.txt</code>.   First, we&#39;ll move into <code>foo/cats</code> so we don&#39;t have to use long paths:</p>
         
         <pre><code class="lang-zsh">
-            <span class="prompt">$</span> cd foo/cats
-            <span class="prompt">$</span> echo <span class="hljs-string">"Tiger, tiger burning bright"</span> &gt; tiger.txt 
-            <span class="prompt">$</span> cat tiger.txt
+            <span class="prompt">$ </span> cd foo/cats
+            <span class="prompt">$ </span> echo <span class="hljs-string">"Tiger, tiger burning bright"</span> &gt; tiger.txt 
+            <span class="prompt">$ </span> cat tiger.txt
             Tiger, tiger burning bright
-            <span class="prompt">$</span>
+            <span class="prompt">$ </span>
         </code></pre>
 
         <p>Two new commands:
@@ -171,16 +172,20 @@
         <code>echo</code> copies the quoted text on the left of the <code>&gt;</code> to the file on the right.   If the file doesn&#39;t exist, it&#39;ll be created.   If it does exist, it&#39;ll be overwritten.   To append text at the end of the file, after the existing content, use <code>&gt;&gt;</code> instead of <code>&gt;</code>:</p>
         
         <pre><code class="lang-zsh">
-            <span class="prompt">$</span> echo <span class="hljs-string">"Some text"</span> &gt; tiger.txt</span> 
-            <span class="prompt">$</span> cat tiger.txt</span>
+            <span class="prompt">$ </span> echo <span class="hljs-string">"Some text"</span> &gt; tiger.txt</span> 
+            <span class="prompt">$ </span> cat tiger.txt</span>
             Some text
-            <span class="prompt">$</span> echo <span class="hljs-string">"Another line of text"</span> &gt;&gt; tiger.txt</span> 
-            <span class="prompt">$</span> cat tiger.txt</span>
+            <span class="prompt">$ </span> echo <span class="hljs-string">"Another line of text"</span> &gt;&gt; tiger.txt</span> 
+            <span class="prompt">$ </span> cat tiger.txt</span>
             Some text
             Another line of text
-            <span class="prompt">$</span>
+            <span class="prompt">$ </span>
         </code></pre>
 
     </main>
+
+
+    <script src="scripts/main.js"></script>
+    
 </body>
 </html>
